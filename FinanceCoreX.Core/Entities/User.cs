@@ -1,15 +1,20 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using System.ComponentModel.DataAnnotations;
 
 namespace FinanceCoreX.Core.Entities
 {
     public class User : IdentityUser<string>
     {
-        public int UserId { get; set; }
-        public string Username { get; set; }
-        public string Password { get; set; }
+        [Required]
+        public string City { get; set; }
+        public bool IsAdmin { get; set; } = false;
+        public decimal Balance { get; set; }
+        [Required]
         public string FirstName { get; set; }
+        [Required]
         public string LastName { get; set; }
-        public string Email { get; set; }
-        public string PhoneNumber { get; set; }
+        public ICollection<Account> Accounts { get; set; }
+        public ICollection<Transaction> Transactions { get; set; }
+
     }
 }

@@ -15,5 +15,10 @@ namespace FinanceCoreX.Data.Concrete
         public UserRefreshTokenRepository(DbContext context) : base(context)
         {
         }
+
+        private AppDbContext AppDbContext
+        {
+            get { return _context as AppDbContext; }
+        }
     }
-    }
+}

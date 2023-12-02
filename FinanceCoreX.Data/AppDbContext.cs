@@ -17,9 +17,9 @@ namespace FinanceCoreX.Data
 
         }
 
-        public DbSet<Account> Categories { get; set; }
+        public DbSet<Account> Accounts { get; set; }
+        public DbSet<Invoice> Invoices { get; set; }
         public DbSet<Transaction> Transactions { get; set; }
-        public DbSet<Invoice> Organizations { get; set; }
         public DbSet<UserRefreshToken> UserRefreshTokens { get; set; }
 
 

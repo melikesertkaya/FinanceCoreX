@@ -15,5 +15,10 @@ namespace FinanceCoreX.Data.Concrete
         public AccountRepository(DbContext context) : base(context)
         {
         }
+
+        private AppDbContext AppDbContext
+        {
+            get { return _context as AppDbContext; }
+        }
     }
 }
