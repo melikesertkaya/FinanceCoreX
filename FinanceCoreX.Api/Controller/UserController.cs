@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FinanceCoreX.Api.Controller
 {
+
     [Route("api/[controller]/[action]")]
     [ApiController]
     public class UserController : ControllerBase
@@ -24,13 +25,6 @@ namespace FinanceCoreX.Api.Controller
             return Ok(result);
         }
 
-        //[HttpPost]
-        //public async Task<IActionResult> GetUserByUserName(GetUserDto getUserDto)
-        //{
-        //    var result = await _userService.GetUserByNameAsync(getUserDto.UserName);
-
-        //    return Ok(result);
-        //}
 
 
     }

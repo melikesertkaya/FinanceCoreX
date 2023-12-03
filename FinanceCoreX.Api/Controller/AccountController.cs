@@ -1,6 +1,5 @@
 ﻿using FinanceCoreX.Core.Entities;
 using FinanceCoreX.Services.Abstract;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FinanceCoreX.Api.Controller
@@ -11,6 +10,35 @@ namespace FinanceCoreX.Api.Controller
     {
         private readonly IAccountService _accountService;
 
-        
+        public AccountController(IAccountService accountService)
+        {
+            _accountService = accountService;
+        }
+
+        [HttpPost("create")]
+        public async Task<IActionResult> CreateAccount([FromBody] Account account)
+        {
+            var response = await _accountService.CreateAccount(account);
+            return Ok(response);
+        }
+
+        [HttpGet("all")]
+        public async Task<IActionResult> GetAllAccounts()
+        {
+            var response = await _accountService.GetAllAccounts();
+            return Ok(response);
+        }
+
+        [HttpGet("{accountId}")]
+        public async Task<IActionResult> GetAccountById(int accountId)
+        {
+            var response = await _accountService.GetAccountById(accountId);
+            if (response.Data == null)
+            {
+                return NotFound();
+            }
+            return Ok(response);
+        }
+
     }
 }

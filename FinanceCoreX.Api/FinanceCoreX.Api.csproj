@@ -18,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\FinanceCoreX.Core\FinanceCoreX.Core.csproj" />
     <ProjectReference Include="..\FinanceCoreX.Services\FinanceCoreX.Services.csproj" />
   </ItemGroup>
 
