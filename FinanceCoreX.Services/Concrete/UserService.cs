@@ -23,17 +23,24 @@ namespace FinanceCoreX.Services.Concrete
         public async Task<Response<UserDto>> CreateUserAsync(CreateUserDto createUserDto)
         {
             var user = _mapper.Map<User>(createUserDto);
-
-            user.Id = Guid.NewGuid().ToString();
-
-            var result = await _userManager.CreateAsync(user, createUserDto.Password);
-
-            if (!result.Succeeded)
+            try
             {
-                var errors = result.Errors.Select(x => x.Description).ToList();
+                var result = await _userManager.CreateAsync(user, createUserDto.Password);
 
-                return new Response<UserDto>(ResultStatus.Error, errors);
+                if (!result.Succeeded)
+                {
+                    var errors = result.Errors.Select(x => x.Description).ToList();
+
+                    return new Response<UserDto>(ResultStatus.Error, errors);
+                }
             }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+
+           
             return new Response<UserDto>(ResultStatus.Success, "Kullanıcı başarıyla eklendi.");
         }
 

@@ -144,10 +144,6 @@ namespace FinanceCoreX.Data.Migrations
                     b.Property<decimal>("Balance")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<string>("City")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
@@ -159,16 +155,8 @@ namespace FinanceCoreX.Data.Migrations
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
 
-                    b.Property<string>("FirstName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<bool>("IsAdmin")
                         .HasColumnType("bit");
-
-                    b.Property<string>("LastName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
@@ -221,16 +209,14 @@ namespace FinanceCoreX.Data.Migrations
                             Id = "2",
                             AccessFailedCount = 0,
                             Balance = 1500m,
-                            City = "DefaultCity",
-                            ConcurrencyStamp = "ebc1aec2-db1a-40a8-acd1-b56c9b2f606b",
+                            ConcurrencyStamp = "e07a1385-8eee-45c2-aacf-eb3fe2829994",
                             Email = "melikesertkaya99@gmail.com",
                             EmailConfirmed = false,
-                            FirstName = "Melike",
                             IsAdmin = false,
-                            LastName = "Sertkaya",
                             LockoutEnabled = false,
                             PasswordHash = "E4FDC41E7458B7A4B128154A181D2C305133226909CF5B9DB3BD21B9884717AFA03A2096E201E2DC056C55D8C3F69164D08ECA3167FA074E1088940EE49EBB87",
                             PhoneNumberConfirmed = false,
+                            SecurityStamp = "781c713b-2994-43ae-88ca-118898b9b6cc",
                             TwoFactorEnabled = false,
                             UserName = "melike"
                         },
@@ -239,16 +225,14 @@ namespace FinanceCoreX.Data.Migrations
                             Id = "1",
                             AccessFailedCount = 0,
                             Balance = 1500m,
-                            City = "DefaultCity",
-                            ConcurrencyStamp = "6072837d-f699-42e2-b043-f613cd23b73c",
+                            ConcurrencyStamp = "9fddc98c-c2a4-4a00-a31e-7398e217307a",
                             Email = "admin@gmail.com",
                             EmailConfirmed = false,
-                            FirstName = "Enes",
                             IsAdmin = true,
-                            LastName = "Aslan",
                             LockoutEnabled = false,
                             PasswordHash = "E4FDC41E7458B7A4B128154A181D2C305133226909CF5B9DB3BD21B9884717AFA03A2096E201E2DC056C55D8C3F69164D08ECA3167FA074E1088940EE49EBB87",
                             PhoneNumberConfirmed = false,
+                            SecurityStamp = "9d187112-d38d-4650-8e90-1513b7fa5d21",
                             TwoFactorEnabled = false,
                             UserName = "admin"
                         });

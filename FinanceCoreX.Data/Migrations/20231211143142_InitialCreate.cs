@@ -32,11 +32,8 @@ namespace FinanceCoreX.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    City = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     IsAdmin = table.Column<bool>(type: "bit", nullable: false),
                     Balance = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
@@ -240,11 +237,11 @@ namespace FinanceCoreX.Data.Migrations
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
-                columns: new[] { "Id", "AccessFailedCount", "Balance", "City", "ConcurrencyStamp", "Email", "EmailConfirmed", "FirstName", "IsAdmin", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
+                columns: new[] { "Id", "AccessFailedCount", "Balance", "ConcurrencyStamp", "Email", "EmailConfirmed", "IsAdmin", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { "1", 0, 1500m, "DefaultCity", "6072837d-f699-42e2-b043-f613cd23b73c", "admin@gmail.com", false, "Enes", true, "Aslan", false, null, null, null, "E4FDC41E7458B7A4B128154A181D2C305133226909CF5B9DB3BD21B9884717AFA03A2096E201E2DC056C55D8C3F69164D08ECA3167FA074E1088940EE49EBB87", null, false, null, false, "admin" },
-                    { "2", 0, 1500m, "DefaultCity", "ebc1aec2-db1a-40a8-acd1-b56c9b2f606b", "melikesertkaya99@gmail.com", false, "Melike", false, "Sertkaya", false, null, null, null, "E4FDC41E7458B7A4B128154A181D2C305133226909CF5B9DB3BD21B9884717AFA03A2096E201E2DC056C55D8C3F69164D08ECA3167FA074E1088940EE49EBB87", null, false, null, false, "melike" }
+                    { "1", 0, 1500m, "9fddc98c-c2a4-4a00-a31e-7398e217307a", "admin@gmail.com", false, true, false, null, null, null, "E4FDC41E7458B7A4B128154A181D2C305133226909CF5B9DB3BD21B9884717AFA03A2096E201E2DC056C55D8C3F69164D08ECA3167FA074E1088940EE49EBB87", null, false, "9d187112-d38d-4650-8e90-1513b7fa5d21", false, "admin" },
+                    { "2", 0, 1500m, "e07a1385-8eee-45c2-aacf-eb3fe2829994", "melikesertkaya99@gmail.com", false, false, false, null, null, null, "E4FDC41E7458B7A4B128154A181D2C305133226909CF5B9DB3BD21B9884717AFA03A2096E201E2DC056C55D8C3F69164D08ECA3167FA074E1088940EE49EBB87", null, false, "781c713b-2994-43ae-88ca-118898b9b6cc", false, "melike" }
                 });
 
             migrationBuilder.CreateIndex(

@@ -1,5 +1,6 @@
 ﻿using FinanceCoreX.Core.Entities;
 using FinanceCoreX.Services.Abstract;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FinanceCoreX.Api.Controller
@@ -21,7 +22,7 @@ namespace FinanceCoreX.Api.Controller
             var response = await _accountService.CreateAccount(account);
             return Ok(response);
         }
-
+        [Authorize]
         [HttpGet("all")]
         public async Task<IActionResult> GetAllAccounts()
         {

@@ -25,10 +25,7 @@ namespace FinanceCoreX.Data.Configurations
                     UserName = "melike",
                     Email = "melikesertkaya99@gmail.com",
                     Balance = 1500,
-                    FirstName = "Melike",
-                    LastName = "Sertkaya",
                     IsAdmin = false,
-                    City = "DefaultCity",
                     PasswordHash = "E4FDC41E7458B7A4B128154A181D2C305133226909CF5B9DB3BD21B9884717AFA03A2096E201E2DC056C55D8C3F69164D08ECA3167FA074E1088940EE49EBB87"
                 },
                 new User
@@ -37,10 +34,7 @@ namespace FinanceCoreX.Data.Configurations
                     UserName = "admin",
                     Email = "admin@gmail.com",
                     Balance = 1500,
-                    FirstName = "Enes",
-                    LastName = "Aslan",
                     IsAdmin = true,
-                    City = "DefaultCity",
                     PasswordHash = "E4FDC41E7458B7A4B128154A181D2C305133226909CF5B9DB3BD21B9884717AFA03A2096E201E2DC056C55D8C3F69164D08ECA3167FA074E1088940EE49EBB87"
                 }
             );
